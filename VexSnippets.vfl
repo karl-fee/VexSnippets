@@ -1,0 +1,9 @@
+
+
+// Curve Direction
+v@flatnrm = @N;
+@flatnrm.y = 0;
+@flatnrm = normalize(@flatnrm);
+v@right = cross({0,1,0}, @flatnrm);
+v@up = cross(@N, @right);
+
