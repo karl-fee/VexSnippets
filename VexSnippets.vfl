@@ -1,6 +1,8 @@
 
+//remove rbd intersections
+i@found_overlap=1;
 
-// Curve Direction
+//Curve Direction
 v@flatnrm = @N;
 @flatnrm.y = 0;
 @flatnrm = normalize(@flatnrm);
@@ -13,3 +15,4 @@ float cull_scale = chf("cull_scale") * 0.5; float cull_min = 0.5 - cull_scale; f
 vector p_ndc = toNDC(cam, @P);
 int is_culled[] = array(p_ndc.x < cull_min || p_ndc.x > cull_max, p_ndc.y < cull_min || p_ndc.y > cull_max, p_ndc.z > 0);
 foreach(int cull; is_culled){ if(cull){ removepoint(geoself(), @ptnum); break; } }
+
